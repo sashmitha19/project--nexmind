@@ -1,0 +1,14 @@
+{ "name": "project-monorepo", 
+"private": true, 
+"version": "1.0.0", "scripts": {
+    "dev": "concurrently \"npm:dev:frontend\" \"npm:dev:backend\"",
+     "dev:frontend": "npm --prefix frontend run dev", 
+     "dev:backend": "python backend/app.py",
+      "lint": "npm --prefix frontend run lint",
+       "build": "npm --prefix frontend run build", 
+       "test": "pytest -q", 
+       "test:security": "pytest -q tests/test_rls_security.py",
+     "test:benchmark": "pytest -q tests/test_tool_routing.py" },
+     "devDependencies": { 
+        "concurrently": "^9.2.1" }
+ }
